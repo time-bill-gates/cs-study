@@ -8,8 +8,6 @@ SpringBoot 등장배경
     ex) hibernate 관련 spring 설정
     
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/d720a820-09de-442d-872c-d4c21ab4eecc/image.png)
-
 - 스프링 부트는 단지 실행만 하면 되는 스프링 기반의 어플리케이션을 쉽게 만들 수 있다.
 </aside>
 
