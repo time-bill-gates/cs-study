@@ -13,23 +13,18 @@ OOP의 단점을 극복하기 위한 횡단관심사를 모듈화 한 프로그�
 ## AOP 동작 방식
 
 - 컴파일 시점: 실제 대상 코드에 애스팩트를 통한 부가 기능 호출 코드가 포함된다. AspectJ를 직접 사용해야 한다.
-    
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/13818c71-a4f5-4af8-885a-0275a880e617/image.png)
+    ![image (4)](https://github.com/user-attachments/assets/55fea837-4d57-44d2-a6e8-ba26699a4f2d)
     
 - 클래스 로딩 시점: 실제 대상 코드에 애스팩트를 통한 부가 기능 호출 코드가 포함된다. AspectJ를 직접 사용해야 한다.
-    
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/4b18ea6e-f2f8-429b-8988-f1090d7db2da/image.png)
+    ![image (5)](https://github.com/user-attachments/assets/8e155b72-1100-433d-9283-9b39ed5e465f)
     
 - 런타임 시점: 실제 대상 코드는 그대로 유지된다. 대신에 프록시를 통해 부가 기능이 적용된다. 따라서 항상 **프록시**를 통해야 부가 기능을 사용할 수 있다. 스프링 AOP는 이 방식을 사용한다.
-    
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/8c5fd1bd-8543-48d2-8439-6c4f8d4aa68b/image.png)
-    
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/aac294e6-6057-4114-94fb-cd2530ab781e/image.png)
-    
+    ![image (6)](https://github.com/user-attachments/assets/6cdfbd22-5a6d-46de-aefc-fe2725160607)
+
+![image (7)](https://github.com/user-attachments/assets/26d4d911-4bd7-4e8c-a308-5d9a109d6658)
+
 
 ## 용어
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/7abc0c8c-9d03-4ad7-ac92-3d69d80b65ae/image.png)
 
 - 타켓(Target)
     - 어드바이스를 받는 객체, 포인트컷으로 결정
@@ -75,11 +70,6 @@ OOP의 단점을 극복하기 위한 횡단관심사를 모듈화 한 프로그�
     예) 요청 값이나, 응답 값을 중간에 변형한다.
     예) 실행 시간을 측정해서 추가 로그를 남긴다.
     
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/edac9092-3ed3-4d8e-866c-ad86e9c5f6e8/image.png)
-    
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/70db3496-91e5-4cb2-8ecf-413b6baabd8d/image.png)
-    
-
 ### CGLIB
 
 사용 방법:
@@ -115,15 +105,16 @@ OOP의 단점을 극복하기 위한 횡단관심사를 모듈화 한 프로그�
 
 JDK 동적 프록시와 CGLIB를 함께 사용할 수 있는 구현체
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/1d7ae9d7-cd79-4709-874e-e038c0bf4602/image.png)
+![image (9)](https://github.com/user-attachments/assets/930fd7f3-b8a7-4587-8552-522f62521ae4)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/89b00dea-4af1-4b7a-8d05-2170cb84be40/image.png)
+![image (10)](https://github.com/user-attachments/assets/a222a968-89c8-4556-82db-db00cecd3601)
+
 
 `Advice` 는 프록시에 적용하는 부가 기능 로직이다. 이것은 JDK 동적 프록시가 제공하는InvocationHandler 와 CGLIB가 제공하는 MethodInterceptor 의 개념과 유사한다. 둘을 개념적으로 추상화 한 것이다. 프록시 팩토리를 사용하면 둘 대신에 Advice 를 사용하면 된다.
 
 ## Spring AOP 어드바이스
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/3ebbae12-27a1-4383-9a57-f5e75ff49f14/image.png)
+![image (11)](https://github.com/user-attachments/assets/2ae54ed4-e2b5-499f-8155-f6a5aa84c979)
 
 @Around : 메서드 호출 전후에 수행, 가장 강력한 어드바이스, 조인 포인트 실행 여부 선택, 반환 값 변환, 예외 변환 등이 가능
 @Before : 조인 포인트 실행 이전에 실행
@@ -159,9 +150,6 @@ bean : 스프링 전용 포인트컷 지시자, 빈의 이름으로 포인트컷
 ### 해결3 - 구조 변경
 
 ### 문제2
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/84c11b81-bda1-4e76-b244-ebadfc7850fd/310e23b6-f919-435b-9686-5cb3c7b2ae37/image.png)
-
 JDK 동적 프록시 한계, 인터페이스 기반으로 프록시를 생성하는 JDK 동적 프록시는 구체 클래스로 타입 캐스팅이 불가능한 한계가 있다. 
 
 ### 문제3
@@ -188,3 +176,6 @@ JDK 동적 프록시 한계, 인터페이스 기반으로 프록시를 생성하
 ```
 spring.aop.proxy-target-class=false
 ```
+
+### 출처
+- 인프런 김영한 스프링 고급편 강의
